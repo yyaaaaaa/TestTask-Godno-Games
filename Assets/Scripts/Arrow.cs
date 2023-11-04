@@ -1,13 +1,14 @@
 using Spine.Unity;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
     [SpineAnimation]
     public string attackAnimationName;
+
     public SkeletonAnimation skeletonAnimation;
+
     private Rigidbody2D rb;
     private bool hit = false;
     private void Start()

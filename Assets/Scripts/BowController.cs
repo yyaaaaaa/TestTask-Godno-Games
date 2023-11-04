@@ -1,7 +1,5 @@
 using Spine;
 using Spine.Unity;
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BowController : MonoBehaviour
@@ -121,7 +119,7 @@ public class BowController : MonoBehaviour
     {
         Vector2[] result = new Vector2[steps];
         float timestep = Time.fixedDeltaTime / Physics2D.velocityIterations * stepDistance;
-        Vector2 gravityAcceleration = Physics2D.gravity * rigidbody.gravityScale * timestep * timestep;
+        Vector2 gravityAcceleration = rigidbody.gravityScale * timestep * timestep * Physics2D.gravity;
 
         float drag = 1f - timestep * rigidbody.drag;
         Vector2 movestep = velocity * timestep;
